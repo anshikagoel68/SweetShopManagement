@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Sweet Shop Design System - Warm, playful candy shop aesthetic */
+
+@layer base {
+  :root {
+    /* Core candy shop palette */
+    --background: 30 50% 98%;
+    --foreground: 350 30% 20%;
+
+    --card: 30 40% 99%;
+    --card-foreground: 350 30% 20%;
+
+    --popover: 30 40% 99%;
+    --popover-foreground: 350 30% 20%;
+
+    /* Pink coral as primary */
+    --primary: 350 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Cream secondary */
+    --secondary: 35 60% 95%;
+    --secondary-foreground: 350 30% 25%;
+
+    /* Muted tones */
+    --muted: 30 30% 92%;
+    --muted-foreground: 350 15% 45%;
+
+    /* Golden accent */
+    --accent: 40 85% 55%;
+    --accent-foreground: 35 50% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 30% 88%;
+    --input: 30 30% 88%;
+    --ring: 350 70% 60%;
+
+    --radius: 1rem;
+
+    /* Sweet shop specific tokens */
+    --candy-pink: 350 70% 60%;
+    --candy-coral: 15 80% 65%;
+    --candy-cream: 35 60% 95%;
+    --candy-gold: 40 85% 55%;
+    --candy-mint: 160 50% 60%;
+    --candy-lavender: 270 50% 70%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(350 70% 60% / 0.1), hsl(40 85% 55% / 0.1));
+    --gradient-card: linear-gradient(180deg, hsl(30 40% 99%), hsl(35 60% 97%));
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 60%), hsl(15 80% 65%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(350 70% 60% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(350 30% 20% / 0.1);
+    --shadow-glow: 0 0 40px hsl(350 70% 60% / 0.2);
+
+    --sidebar-background: 30 50% 98%;
+    --sidebar-foreground: 350 30% 20%;
+    --sidebar-primary: 350 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 60% 95%;
+    --sidebar-accent-foreground: 350 30% 25%;
+    --sidebar-border: 30 30% 88%;
+    --sidebar-ring: 350 70% 60%;
+  }
+
+  .dark {
+    --background: 350 25% 8%;
+    --foreground: 30 50% 95%;
+
+    --card: 350 20% 12%;
+    --card-foreground: 30 50% 95%;
+
+    --popover: 350 20% 12%;
+    --popover-foreground: 30 50% 95%;
+
+    --primary: 350 65% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 20% 18%;
+    --secondary-foreground: 30 50% 95%;
+
+    --muted: 350 15% 20%;
+    --muted-foreground: 30 30% 60%;
+
+    --accent: 40 75% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 350 15% 20%;
+    --input: 350 15% 20%;
+    --ring: 350 65% 55%;
+
+    --candy-pink: 350 65% 55%;
+    --candy-coral: 15 70% 55%;
+    --candy-cream: 35 40% 20%;
+    --candy-gold: 40 75% 50%;
+    --candy-mint: 160 40% 45%;
+    --candy-lavender: 270 40% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(350 65% 55% / 0.15), hsl(40 75% 50% / 0.15));
+    --gradient-card: linear-gradient(180deg, hsl(350 20% 12%), hsl(350 20% 14%));
+    --gradient-primary: linear-gradient(135deg, hsl(350 65% 55%), hsl(15 70% 55%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(350 65% 55% / 0.3);
+
+    --sidebar-background: 350 25% 8%;
+    --sidebar-foreground: 30 50% 95%;
+    --sidebar-primary: 350 65% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 350 20% 18%;
+    --sidebar-accent-foreground: 30 50% 95%;
+    --sidebar-border: 350 15% 20%;
+    --sidebar-ring: 350 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
